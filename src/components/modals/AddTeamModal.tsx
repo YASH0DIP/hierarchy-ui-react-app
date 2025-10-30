@@ -97,6 +97,7 @@ const AddTeamModal: React.FC<Props> = ({ open, onClose, departmentHead }) => {
             open={open}
             onClose={onClose}
             maxWidth={false}
+            // className=''
             PaperProps={{
                 sx: {
                     width: { xs: "90%", sm: "80%", md: "600px", lg: "700px" },
@@ -107,31 +108,41 @@ const AddTeamModal: React.FC<Props> = ({ open, onClose, departmentHead }) => {
         >
             <DialogTitle>Add New Team</DialogTitle>
             <hr className='text-white' />
-            <DialogContent sx={{ minWidth: 400 }}>
+            <DialogContent sx={{
+                width: '100%',
+                p: 2,
+                display: 'flex',
+                flexDirection: 'column',
+                gap: 2,
+            }}>
                 <div className="flex flex-col gap-4">
                     <TextField
-                        fullWidth
+                        // fullWidth
                         required
                         label="Team Name"
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    // sx={{
+                    //     minWidth: 0, // ensures it doesn't overflow
+                    //     flexGrow: 1, // allows it to expand
+                    // }}
                     />
                     <TextField
-                        fullWidth
+                        // fullWidth
                         required
                         label="Phone Number"
                         value={formData.phoneNumber}
                         onChange={(e) => setFormData({ ...formData, phoneNumber: e.target.value })}
                     />
                     <TextField
-                        fullWidth
+                        // fullWidth
                         required
                         label="Email ID"
                         type="email"
                         value={formData.emailId}
                         onChange={(e) => setFormData({ ...formData, emailId: e.target.value })}
                     />
-                    <FormControl fullWidth required>
+                    <FormControl required>
                         <InputLabel>Select Team Leader</InputLabel>
                         <Select
                             value={selectedLeader}

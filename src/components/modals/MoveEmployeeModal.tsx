@@ -46,7 +46,13 @@ const MoveEmployeeModal: React.FC<Props> = ({ open, onClose, employee, currentTe
     >
       <DialogTitle>Move Employee</DialogTitle>
       <hr className='text-white' />
-      <DialogContent sx={{ minWidth: 450}}>
+      <DialogContent sx={{
+        width: '100%',
+        p: 2,
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 2,
+      }}>
         <FormControl fullWidth>
           <InputLabel>Select Team</InputLabel>
           <Select

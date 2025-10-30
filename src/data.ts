@@ -1,154 +1,154 @@
 import type { Employee } from './types/Employee';
 
 export const EmployeesData: Employee = {
-    name: "John Doe",
-    id: "CEO001",
-    phoneNumber: "1234567890",
-    emailId: "johndoe@company.com",
-    position: "CEO",
-    department: "Executive",
-    children: [
+  name: "Michael Roberts",
+  id: "CEO001",
+  phoneNumber: "9876543210",
+  emailId: "michael.roberts@company.com",
+  position: "CEO",
+  department: "Executive",
+  children: [
+    {
+      name: "Sarah Johnson",
+      id: "HR001",
+      phoneNumber: "8765432109",
+      emailId: "sarah.johnson@company.com",
+      position: "Head of Human Resources",
+      department: "HR",
+      children: [
         {
-            name: "Jane Smith",
-            id: "HR001",
-            phoneNumber: "2345678901",
-            emailId: "janesmith@company.com",
-            position: "Head of Staff/HR",
-            department: "HR",
-            children: [
-                {
-                    name: "HR Team 1",
-                    id: "T1",
-                    department: "HR",
-                    position: "Team",
-                    emailId: "",
-                    phoneNumber: "",
-                    children: [
-                        {
-                            name: "Alice Johnson",
-                            id: "T1L001",
-                            phoneNumber: "3456789012",
-                            emailId: "alicejohnson@company.com",
-                            position: "Team Leader",
-                            department: "HR",
-                            teamId: "T1"
-                        },
-                        {
-                            name: "Bob Williams",
-                            id: "T1M001",
-                            phoneNumber: "4567890123",
-                            emailId: "bobwilliams@company.com",
-                            position: "Team Member",
-                            department: "HR",
-                            teamId: "T1"
-                        }
-                    ]
-                },
-                {
-                    name: "HR Team 2",
-                    id: "T2",
-                    department: "HR",
-                    position: "Team",
-                    emailId: "",
-                    phoneNumber: "",
-                    children: [
-                        {
-                            name: "Charlie Brown",
-                            id: "T2L001",
-                            phoneNumber: "5678901234",
-                            emailId: "charliebrown@company.com",
-                            position: "Team Leader",
-                            department: "HR",
-                            teamId: "T2"
-                        },
-                        {
-                            name: "David Davis",
-                            id: "T2M001",
-                            phoneNumber: "6789012345",
-                            emailId: "daviddavis@company.com",
-                            position: "Team Member",
-                            department: "HR",
-                            teamId: "T2"
-                        }
-                    ]
-                }
-            ]
+          name: "HR Team Alpha",
+          id: "HRT1",
+          department: "HR",
+          position: "Team",
+          emailId: "",
+          phoneNumber: "",
+          children: [
+            {
+              name: "Olivia Carter",
+              id: "HRT1L001",
+              phoneNumber: "7654321098",
+              emailId: "olivia.carter@company.com",
+              position: "Team Leader",
+              department: "HR",
+              teamId: "HRT1"
+            },
+            {
+              name: "Ethan Hughes",
+              id: "HRT1M001",
+              phoneNumber: "7543210987",
+              emailId: "ethan.hughes@company.com",
+              position: "Team Member",
+              department: "HR",
+              teamId: "HRT1"
+            }
+          ]
         },
         {
-            name: "Eva Martinez",
-            id: "ENG001",
-            phoneNumber: "7890123456",
-            emailId: "evamartinez@company.com",
-            position: "Head of Engineering",
-            department: "Engineering",
-            children: [
-                {
-                    name: "Engineer Team",
-                    id: "ET0",
-                    department: "Engineering",
-                    position: "Team",
-                    emailId: "franklee@company.com",
-                    phoneNumber: "8901234567",
-                    children: [
-                        {
-                            name: "Frank Lee",
-                            id: "ET1L001",
-                            phoneNumber: "8901234567",
-                            emailId: "franklee@company.com",
-                            position: "Team Leader",
-                            department: "Engineering",
-                            teamId: "ET0"
-                        },
-                        {
-                            name: "Grace Kim",
-                            id: "ET1M001",
-                            phoneNumber: "9012345678",
-                            emailId: "gracekim@company.com",
-                            position: "Team Member",
-                            department: "Engineering",
-                            teamId: "ET0"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            name: "Henry Wilson",
-            id: "DES001",
-            phoneNumber: "0123456789",
-            emailId: "henrywilson@company.com",
-            position: "Head of Design",
-            department: "Design",
-            children: [
-                {
-                    name: "Design Team",
-                    department: "Design",
-                    id: "DT0",
-                    position: "Team",
-                    emailId: "ivychen@company.com",
-                    phoneNumber: "1234567890",
-                    children: [
-                        {
-                            name: "Ivy Chen",
-                            id: "DT1L001",
-                            phoneNumber: "1234567890",
-                            emailId: "ivychen@company.com",
-                            position: "Team Leader",
-                            department: "Design",
-                            teamId: "DT0"
-                        },
-                        {
-                            name: "Jack Taylor",
-                            id: "DT1M001",
-                            phoneNumber: "2345678901",
-                            emailId: "jacktaylor@company.com",
-                            position: "Team Member",
-                            department: "Design",
-                            teamId: "DT0"
-                        }
-                    ]
-                }
-            ]
+          name: "HR Team Beta",
+          id: "HRT2",
+          department: "HR",
+          position: "Team",
+          emailId: "",
+          phoneNumber: "",
+          children: [
+            {
+              name: "Sophia Martinez",
+              id: "HRT2L001",
+              phoneNumber: "7432109876",
+              emailId: "sophia.martinez@company.com",
+              position: "Team Leader",
+              department: "HR",
+              teamId: "HRT2"
+            },
+            {
+              name: "Noah Patel",
+              id: "HRT2M001",
+              phoneNumber: "7321098765",
+              emailId: "noah.patel@company.com",
+              position: "Team Member",
+              department: "HR",
+              teamId: "HRT2"
+            }
+          ]
         }
-    ]
-}
+      ]
+    },
+    {
+      name: "David Anderson",
+      id: "ENG001",
+      phoneNumber: "8210987654",
+      emailId: "david.anderson@company.com",
+      position: "Head of Engineering",
+      department: "Engineering",
+      children: [
+        {
+          name: "Engineering Team Orion",
+          id: "ENGT1",
+          department: "Engineering",
+          position: "Team",
+          emailId: "",
+          phoneNumber: "",
+          children: [
+            {
+              name: "Isabella Thomas",
+              id: "ENG_T1_L001",
+              phoneNumber: "8109876543",
+              emailId: "isabella.thomas@company.com",
+              position: "Team Leader",
+              department: "Engineering",
+              teamId: "ENGT1"
+            },
+            {
+              name: "Liam Walker",
+              id: "ENGT1M001",
+              phoneNumber: "8098765432",
+              emailId: "liam.walker@company.com",
+              position: "Team Member",
+              department: "Engineering",
+              teamId: "ENGT1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      name: "Emily Davis",
+      id: "DES001",
+      phoneNumber: "9988776655",
+      emailId: "emily.davis@company.com",
+      position: "Head of Design",
+      department: "Design",
+      children: [
+        {
+          name: "Design Team Nova",
+          id: "DEST1",
+          department: "Design",
+          position: "Team",
+          emailId: "",
+          phoneNumber: "",
+          children: [
+            {
+              name: "Ava Parker",
+              id: "DEST1L001",
+              phoneNumber: "9877665544",
+              emailId: "ava.parker@company.com",
+              position: "Team Leader",
+              department: "Design",
+              teamId: "DEST1"
+            },
+            {
+              name: "Lucas Evans",
+              id: "DEST1M001",
+              phoneNumber: "9766554433",
+              emailId: "lucas.evans@company.com",
+              position: "Team Member",
+              department: "Design",
+              teamId: "DEST1"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};

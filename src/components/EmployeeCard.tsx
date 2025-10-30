@@ -43,15 +43,15 @@ const EmployeeCard: React.FC<Props> = ({ employee, onAction, ArrowIcon }) => {
           </Box>
 
           <Box display="flex" className="flex-col">
-            <Box display="flex" alignItems="center" gap={1} justifyContent="flex-end">
+            <Box display="flex" alignItems="center" gap={1} justifyContent="flex-end" flexDirection="row">
               <EmployeeActions employee={employee} onAction={onAction} teamSize={teamSize} />
               {employee.children && employee.children.length > 0 && (
-                <ArrowIcon style={{ opacity: 0.6 }} />
+                <ArrowIcon style={{ opacity: 0.6 }}/>
               )}
             </Box>
             {employee.position === "Team" && (employee.children?.length ?? 0) < 2 && (
               <Typography variant="caption" color="warning" mt={2} display="block" fontWeight="bold">
-                Each team must have at least 2 members.
+                Each team must have at least 2 members
               </Typography>
             )}
           </Box>

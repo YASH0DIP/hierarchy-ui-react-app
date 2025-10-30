@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Tooltip } from '@mui/material';
+import { Button, Tooltip, IconButton } from '@mui/material';
 import type { Employee } from '../types/Employee';
 import { AddSharp, ArrowOutward, DeleteOutline, EditNote } from '@mui/icons-material';
 
@@ -23,15 +23,23 @@ const EmployeeActions: React.FC<Props> = ({
     <div className="flex gap-2" onClick={e => e.stopPropagation()}>
       {employee.position !== 'CEO' && (
         <Tooltip title="Update Employee">
-          <Button
-            variant="outlined"
-            color="primary"
-            size="small"
-            aria-label='Update Employee'
-            onClick={(e) => handleClick(e, 'update')}
-          >
-            <EditNote />
-          </Button>
+          <span className='border border-blue-700 rounded hover:bg-yellow-50'>
+            <IconButton
+              color="primary"
+              size="small"
+              aria-label='Update Employee'
+              onClick={(e) => handleClick(e, 'update')}
+              sx={{
+                width: 34,
+                height: 34,
+                "& svg": { fontSize: 28 },
+                borderRadius: "2px",
+                // border: "1px black solid"
+              }}
+            >
+              <EditNote />
+            </IconButton>
+          </span>
         </Tooltip>
       )}
 
@@ -51,47 +59,68 @@ const EmployeeActions: React.FC<Props> = ({
 
       {employee.position === 'Team Member' && (
         <>
-          <Tooltip title="Move employee to other team">
-            <Button
-              variant="outlined"
-              color="warning"
-              size="small"
-              aria-label='Move Employee'
-              onClick={(e) => handleClick(e, 'move')}
-              disabled={teamSize <= 2}
-              title={teamSize <= 2 ? "Cannot move: Team requires minimum 2 members" : ""}
-            >
-              <ArrowOutward />
-            </Button>
+          <Tooltip title={teamSize < 3 ? "Cannot move: Team requires minimum 2 members" : "Move Employee"}>
+            <span className={`border border-${teamSize<3?"gray-300":"amber-700"} rounded hover:bg-yellow-50`}>
+              <IconButton
+                color="warning"
+                size="small"
+                aria-label='Move Employee'
+                onClick={(e) => handleClick(e, "move")}
+                disabled={teamSize < 3}
+                sx={{
+                  width: 34,
+                  height: 34,
+                  "& svg": { fontSize: 28 },
+                  // border: "1px black solid",
+                  borderRadius: "2px"
+                }}
+              >
+                <ArrowOutward />
+              </IconButton>
+            </span>
           </Tooltip>
-          <Tooltip title="Delete Employee">
-            <Button
-              variant="outlined"
-              color="error"
-              size="small"
-              aria-label='Delete Employee'
-              className={teamSize < 3 ? 'cursor-not-allowed' : ''}
-              onClick={(e) => handleClick(e, 'delete')}
-              disabled={teamSize < 3}
-              title={teamSize < 3 ? "Cannot delete: Team requires minimum 2 members" : ""}
-            >
-              <DeleteOutline />
-            </Button>
+          <Tooltip title={teamSize < 3 ? "Cannot delete: Team requires minimum 2 members" : "Delete Employee"}>
+            <span className={`border border-${teamSize<3?"gray-300":"red-800"} rounded hover:bg-red-50`}>
+              <IconButton
+                color="error"
+                size="small"
+                aria-label='Delete Employee'
+                disabled={teamSize < 3}
+                sx={{
+                  width: 34,
+                  height: 34,
+                  "& svg": { fontSize: 28 },
+                  borderRadius: "2px",
+                  // border: "1px black solid"
+                }}
+                onClick={(e) => handleClick(e, 'delete')}
+              >
+                <DeleteOutline />
+              </IconButton>
+            </span>
           </Tooltip>
         </>
       )}
 
       {employee.position === 'Team' && (
         <Tooltip title="Add Employee">
-          <Button
-            variant="outlined"
-            color="success"
-            aria-label='Add Employee'
-            size="small"
-            onClick={(e) => handleClick(e, 'add')}
-          >
-            <AddSharp />
-          </Button>
+          <span className='border border-green-800 rounded hover:bg-green-50'>
+            <IconButton
+              color="success"
+              aria-label='Add Employee'
+              size="small"
+              onClick={(e) => handleClick(e, 'add')}
+              sx={{
+                width: 34,
+                height: 34,
+                "& svg": { fontSize: 28 },
+                borderRadius: "2px",
+                // border: "1px black solid"
+              }}
+            >
+              <AddSharp />
+            </IconButton>
+          </span>
         </Tooltip>
       )}
     </div>
