@@ -40,7 +40,7 @@ const SearchResults: React.FC = () => {
   if (!filter || matchingNodes.length === 0) return null;
 
   return (
-    <div>
+    <Paper className="space-y-2 p-4">
 
       {matchingNodes.map(node => (
         <EmployeeNode
@@ -49,7 +49,7 @@ const SearchResults: React.FC = () => {
           isSearchResult={true}
         />
       ))}
-    </div>
+    </Paper>
   );
 };
 
