@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-// import { Paper } from '@mui/material';
 import { useEmployee } from '../hooks/useEmployee';
 import type { Employee } from '../types/Employee';
 import EmployeeNode from './EmployeeNode';
