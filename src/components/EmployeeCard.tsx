@@ -26,10 +26,12 @@ const EmployeeCard: React.FC<Props> = ({ employee, onAction, ArrowIcon }) => {
           boxShadow: "0 4px 12px rgba(33, 150, 243, 0.1)",
           transform: "scale(1.01)",
         },
+        m:0,
+        p:0
       }}
     >
       <CardContent>
-        <Box display="flex" flexWrap="wrap" alignItems="center" justifyContent="space-between" gap={2}>
+        <Box display="flex" alignItems="center" justifyContent="space-between" gap={2}>
           <Box display="flex" alignItems="center" gap={1.5}>
             <SupervisedUserCircleSharp fontSize="large" />
             <Box>
@@ -43,7 +45,7 @@ const EmployeeCard: React.FC<Props> = ({ employee, onAction, ArrowIcon }) => {
           </Box>
 
           <Box display="flex" className="flex-col">
-            <Box display="flex" alignItems="center" gap={1} justifyContent="flex-end" flexDirection="row">
+            <Box display="flex" flexWrap="wrap" alignItems="center" gap={1} justifyContent="end">
               <EmployeeActions employee={employee} onAction={onAction} teamSize={teamSize} />
               {employee.children && employee.children.length > 0 && (
                 <ArrowIcon style={{ opacity: 0.6 }}/>
@@ -56,8 +58,6 @@ const EmployeeCard: React.FC<Props> = ({ employee, onAction, ArrowIcon }) => {
             )}
           </Box>
         </Box>
-
-
       </CardContent>
     </Card>
   );

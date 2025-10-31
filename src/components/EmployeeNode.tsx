@@ -69,7 +69,7 @@ const EmployeeNode: React.FC<Props> = ({ employee, isSearchResult = false }) => 
       </div>
 
       {showChildren && (employee.children?.length || 0) > 0 && (
-        <div className="ml-4 mt-2 border-l-2 border-dashed border-gray-300 pl-4">
+        <div className="ml-3 mt-2 border-l-2 border-dashed border-gray-300 pl-3">
           {employee.children?.map(child => (
             <EmployeeNode key={child.id} employee={child} isSearchResult={isSearchResult} />
           ))}

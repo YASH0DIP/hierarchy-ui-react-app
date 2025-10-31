@@ -20,7 +20,7 @@ const EmployeeActions: React.FC<Props> = ({
   };
 
   return (
-    <div className="flex gap-2" onClick={e => e.stopPropagation()}>
+    <div className="flex gap-2 flex-wrap justify-end" onClick={e => e.stopPropagation()}>
       {employee.position !== 'CEO' && (
         <Tooltip title="Update Employee">
           <span className='border border-blue-700 rounded hover:bg-blue-50'>
