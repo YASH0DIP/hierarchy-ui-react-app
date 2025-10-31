@@ -12,13 +12,13 @@ export interface EmployeeContextType {
 
 export const EmployeeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [employees, setEmployees] = useState<Employee>(() => {
-    const saved = localStorage.getItem('companyHierarchy');
+    const saved = localStorage.getItem('oraganizationHierarchy');
     return saved ? JSON.parse(saved) : EmployeesData;
   });
   const [filter, setFilter] = useState('');
 
   useEffect(() => {
-    localStorage.setItem('companyHierarchy', JSON.stringify(employees));
+    localStorage.setItem('oraganizationHierarchy', JSON.stringify(employees));
   }, [employees]);
 
   return (

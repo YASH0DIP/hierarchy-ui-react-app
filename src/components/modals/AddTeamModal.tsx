@@ -64,7 +64,18 @@ const AddTeamModal: React.FC<Props> = ({ open, onClose, departmentHead }) => {
     }
 
     const handleSubmit = () => {
-        if (!formData.name || !formData.phoneNumber || !formData.emailId || !selectedLeader) {
+        if (!formData.name || !selectedLeader) {
+            toast.error("Name and Team Leader are required")
+            return;
+        }
+
+        if(formData.phoneNumber && formData.phoneNumber.length<10){
+            toast.error("Enter valid phone number")
+            return;
+        }
+
+        if(formData.emailId && !/\S+@\S+\.\S+/.test(formData.emailId)){
+            toast.error("Enter valid phone number")
             return;
         }
 
@@ -117,25 +128,18 @@ const AddTeamModal: React.FC<Props> = ({ open, onClose, departmentHead }) => {
             }}>
                 <div className="flex flex-col gap-4">
                     <TextField
-                        // fullWidth
                         required
                         label="Team Name"
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    // sx={{
-                    //     minWidth: 0, // ensures it doesn't overflow
-                    //     flexGrow: 1, // allows it to expand
-                    // }}
                     />
                     <TextField
-                        // fullWidth
                         required
                         label="Phone Number"
                         value={formData.phoneNumber}
                         onChange={(e) => setFormData({ ...formData, phoneNumber: e.target.value })}
                     />
                     <TextField
-                        // fullWidth
                         required
                         label="Email ID"
                         type="email"

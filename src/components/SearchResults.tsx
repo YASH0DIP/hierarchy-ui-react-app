@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Paper } from '@mui/material';
+// import { Paper } from '@mui/material';
 import { useEmployee } from '../hooks/useEmployee';
 import type { Employee } from '../types/Employee';
 import EmployeeNode from './EmployeeNode';
@@ -40,8 +40,7 @@ const SearchResults: React.FC = () => {
   if (!filter || matchingNodes.length === 0) return null;
 
   return (
-    <Paper className="p-4 space-y-4">
-
+    <div>
       {matchingNodes.map(node => (
         <EmployeeNode
           key={node.id}
@@ -49,7 +48,7 @@ const SearchResults: React.FC = () => {
           isSearchResult={true}
         />
       ))}
-    </Paper>
+    </div>
   );
 };
 
