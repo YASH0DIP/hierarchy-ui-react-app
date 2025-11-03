@@ -31,7 +31,14 @@ const SearchBar: React.FC = () => {
         backgroundColor: "rgba(255,255,255,0.8)",
         borderRadius: 4,
         boxShadow: "0 2px 10px rgba(0,0,0,0.05)",
-      }}
+        '& .MuiInputBase-input::placeholder': {
+          fontSize: {
+            xs: '0.75rem',
+            sm: '0.9rem',
+            md: '1rem',
+          },
+          opacity: 0.7,
+      }}}     
       value={searchTerm}
       onChange={(e) => setSearchTerm(e.target.value)}
       InputProps={{
