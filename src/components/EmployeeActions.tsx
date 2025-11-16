@@ -1,7 +1,7 @@
 import React from 'react';
 import { Tooltip, IconButton } from '@mui/material';
 import type { Employee } from '../types/Employee';
-import { DeleteSharp, EditNote, GroupAdd, MoveUp, PersonAddAlt1, } from '@mui/icons-material';
+import { Trash2Icon, UserPen, UserPlus} from 'lucide-react';
 
 interface Props {
   employee: Employee;
@@ -20,45 +20,41 @@ const EmployeeActions: React.FC<Props> = ({
   };
 
   return (
-    <div className="flex gap-2 flex-wrap justify-end" onClick={e => e.stopPropagation()}>
+    <div className="flex gap-2 flex-wrap mt-1" onClick={e => e.stopPropagation()}>
       {employee.position !== 'CEO' && (
         <Tooltip title="Update Employee">
-          <span className='border border-blue-600 rounded hover:bg-blue-50'>
-            <IconButton
-              color="primary"
-              size="small"
-              aria-label='Update Employee'
-              onClick={(e) => handleClick(e, 'update')}
-              sx={{
-                width: 34,
-                height: 34,
-                "& svg": { fontSize: 28 },
-                borderRadius: "2px",
-              }}
-            >
-              <EditNote/>
-            </IconButton>
+          <span className='rounded-xl border border-blue-600 hover:bg-blue-50'>
+          <IconButton
+            color="primary"
+            size="small"
+            aria-label='Update Employee'
+            onClick={(e) => handleClick(e, 'update')}
+            sx={{
+              paddingX: 1.5
+            }}
+          >
+            <UserPen size={16} />
+          </IconButton>
           </span>
         </Tooltip>
       )}
 
       {employee.position.includes('Head') && (
         <Tooltip title="Add Team">
-        <span className='border border-purple-600 rounded hover:bg-purple-50'>
-          <IconButton
-            sx={{
-                width: 34,
-                height: 34,
-                borderRadius: "2px",
-                "& svg": { fontSize: 28 }
+          <span className='rounded-xl border border-purple-600 hover:bg-purple-50'>
+            <IconButton
+              sx={{
+                paddingX: 1.5,
+                fontSize: "10px",
+                fontWeight: "bold"
               }}
-            color="secondary"
-            aria-label='Add Team'
-            size="small"
-            onClick={(e) => handleClick(e, 'addTeam')}
-          >
-            <GroupAdd/>
-          </IconButton>
+              color="secondary"
+              aria-label='Add Team'
+              size="small"
+              onClick={(e) => handleClick(e, 'addTeam')}
+            >
+              Add Team
+            </IconButton>
           </span>
         </Tooltip>
       )}
@@ -66,7 +62,7 @@ const EmployeeActions: React.FC<Props> = ({
       {employee.position === 'Team Member' && (
         <>
           <Tooltip title={teamSize < 3 ? "Cannot move: Team requires minimum 2 members" : "Move Employee"}>
-            <span className={`border ${teamSize<3?"border-gray-300":"border-amber-700"} rounded hover:bg-yellow-50`}>
+            <span className={`rounded-xl border ${teamSize < 3 ? "border-gray-300" : "border-amber-700"} rounded hover:bg-yellow-50`}>
               <IconButton
                 color="warning"
                 size="small"
@@ -74,32 +70,28 @@ const EmployeeActions: React.FC<Props> = ({
                 onClick={(e) => handleClick(e, "move")}
                 disabled={teamSize < 3}
                 sx={{
-                  width: 34,
-                  height: 34,
-                  "& svg": { fontSize: 28 },
-                  borderRadius: "2px"
+                  paddingX: 1.5,
+                  fontSize: "10px",
+                  fontWeight: "bold"
                 }}
               >
-                <MoveUp/>
+                Change Team
               </IconButton>
             </span>
           </Tooltip>
           <Tooltip title={teamSize < 3 ? "Cannot delete: Team requires minimum 2 members" : "Delete Employee"}>
-            <span className={`border ${teamSize<3?"border-gray-300":"border-red-600"} rounded hover:bg-red-50`}>
+            <span className={`rounded-xl border ${teamSize < 3 ? "border-gray-300" : "border-red-600"} rounded hover:bg-red-50`}>
               <IconButton
                 color="error"
                 size="small"
                 aria-label='Delete Employee'
                 disabled={teamSize < 3}
                 sx={{
-                  width: 34,
-                  height: 34,
-                  "& svg": { fontSize: 28 },
-                  borderRadius: "2px",
+                  paddingX: 1.5,
                 }}
                 onClick={(e) => handleClick(e, 'delete')}
               >
-                <DeleteSharp/>
+                <Trash2Icon size={16}/>
               </IconButton>
             </span>
           </Tooltip>
@@ -108,20 +100,17 @@ const EmployeeActions: React.FC<Props> = ({
 
       {employee.position === 'Team' && (
         <Tooltip title="Add Employee">
-          <span className='border border-green-800 rounded hover:bg-green-50'>
+          <span className='rounded-xl border border-green-800 hover:bg-green-50'>
             <IconButton
               color="success"
               aria-label='Add Employee'
               size="small"
               onClick={(e) => handleClick(e, 'add')}
               sx={{
-                width: 34,
-                height: 34,
-                "& svg": { fontSize: 28 },
-                borderRadius: "2px",
+                paddingX: 1.5,
               }}
             >
-              <PersonAddAlt1/>
+              <UserPlus size={16} />
             </IconButton>
           </span>
         </Tooltip>

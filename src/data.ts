@@ -21,8 +21,8 @@ export const EmployeesData: Employee = {
           id: "HRT1",
           department: "HR",
           position: "Team",
-          emailId: "",
-          phoneNumber: "",
+          emailId: "hraplha@gmail.com",
+          phoneNumber: "7654321098",
           children: [
             {
               name: "Olivia Carter",
@@ -49,8 +49,8 @@ export const EmployeesData: Employee = {
           id: "HRT2",
           department: "HR",
           position: "Team",
-          emailId: "",
-          phoneNumber: "",
+          emailId: "hrbet@gmail.com",
+          phoneNumber: "7432109876",
           children: [
             {
               name: "Sophia Martinez",
@@ -87,8 +87,8 @@ export const EmployeesData: Employee = {
           id: "ENGT1",
           department: "Engineering",
           position: "Team",
-          emailId: "",
-          phoneNumber: "",
+          emailId: "engorion@gmail.com",
+          phoneNumber: "8109876543",
           children: [
             {
               name: "Isabella Thomas",
@@ -125,8 +125,8 @@ export const EmployeesData: Employee = {
           id: "DEST1",
           department: "Design",
           position: "Team",
-          emailId: "",
-          phoneNumber: "",
+          emailId: "desnova@gmail.com",
+          phoneNumber: "9877665544",
           children: [
             {
               name: "Ava Parker",

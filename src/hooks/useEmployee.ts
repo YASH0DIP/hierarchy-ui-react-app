@@ -18,10 +18,11 @@ export const useEmployee = () => {
       predicate: (n: Employee) => boolean,
       updater: (n: Employee) => Employee
     ): Employee => {
+      console.log(node.name)
       if (predicate(node)) return updater(node);
       if (!node.children?.length) return node;
-
       const updatedChildren = node.children.map((child) =>
+        // console.log(child.name)
         updateNodeRecursive(child, predicate, updater)
       );
 
@@ -48,7 +49,7 @@ export const useEmployee = () => {
         );
         return updated;
       });
-      toast.success("Employee added successfully!");
+      toast.success("Employee Added!");
     },
     [setEmployees, updateNodeRecursive]
   );
@@ -62,7 +63,7 @@ export const useEmployee = () => {
           (node) => ({ ...node, ...updates })
         )
       );
-      toast.success("Employee updated successfully!");
+      toast.success("Employee Updated!");
     },
     [setEmployees, updateNodeRecursive]
   );
@@ -100,7 +101,7 @@ export const useEmployee = () => {
       const removedEmployee = removeFromOldTeam(prev);
       return addToNewTeam(removedEmployee);
     });
-    toast.success("Employee moved successfully!");
+    toast.success("Employee Moved!");
   };
 
   const deleteEmployee = useCallback(
@@ -124,7 +125,7 @@ export const useEmployee = () => {
           }
         )
       );
-      toast.success("Employee deleted successfully!");
+      toast.success("Employee Deleted!");
     },
     [setEmployees, updateNodeRecursive]
   );
@@ -177,7 +178,7 @@ export const useEmployee = () => {
         return updatedTree;
       });
 
-      toast.success("New team created successfully!");
+      toast.success("New Team Created!");
     },
     [setEmployees, updateNodeRecursive]
   );

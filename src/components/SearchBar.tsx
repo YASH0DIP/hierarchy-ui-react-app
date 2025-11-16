@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { TextField, InputAdornment, IconButton } from '@mui/material';
-import SearchIcon from '@mui/icons-material/Search';
 import ClearIcon from '@mui/icons-material/Clear';
 import { useEmployee } from '../hooks/useEmployee';
+import { Search } from 'lucide-react';
 
 const SearchBar: React.FC = () => {
   const { filter, setFilter } = useEmployee();
@@ -44,7 +44,7 @@ const SearchBar: React.FC = () => {
       InputProps={{
         startAdornment: (
           <InputAdornment position="start">
-            <SearchIcon />
+            <Search size={18}/>
           </InputAdornment>
         ),
         endAdornment: searchTerm && (
