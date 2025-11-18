@@ -18,7 +18,7 @@ const AppContent: React.FC = () => {
         display: "flex",
         justifyContent: "center",
         alignItems: "flex-start",
-        p: { xs: 2, md: 4 },
+        p: { xs: 1.75, md: 3.25 },
         scale: 0.95
       }}
     >
