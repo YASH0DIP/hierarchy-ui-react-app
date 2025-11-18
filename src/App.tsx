@@ -19,6 +19,7 @@ const AppContent: React.FC = () => {
         justifyContent: "center",
         alignItems: "flex-start",
         p: { xs: 2, md: 4 },
+        scale: 0.95
       }}
     >
       <Container
@@ -33,6 +34,7 @@ const AppContent: React.FC = () => {
             variant="h4"
             align="center"
             fontWeight="bold"
+            fontSize={"1.725rem"}
             sx={{
               mb: 4,
               background: "linear-gradient(90deg, #000, #000)",
@@ -68,12 +70,9 @@ const App: React.FC = () => {
       <ToastContainer
         position="bottom-right"
         autoClose={2000}
-        hideProgressBar={true}
         newestOnTop
         closeOnClick
-        pauseOnHover
-        theme="light"
-        className="font-inherit"
+        toastStyle={{fontFamily: "inherit", color: "black", backgroundBlendMode: "color"}}
       />
     </EmployeeProvider>
   );

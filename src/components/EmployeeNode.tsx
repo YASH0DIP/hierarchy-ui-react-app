@@ -68,47 +68,47 @@ const EmployeeNode: React.FC<Props> = ({ employee, isSearchResult = false }) => 
         />
       </div>
 
-      {showChildren && (employee.children?.length || 0) > 0 && (
+      {showChildren && (employee.children?.length || 0) > 0 ? (
         <div className="ml-3 mt-2 border-l-2 border-dashed border-gray-500 pl-3">
           {employee.children?.map(child => (
             <EmployeeNode key={child.id} employee={child} isSearchResult={isSearchResult} />
           ))}
         </div>
-      )}
+      ): null}
 
-      {openModal === 'update' && (
+      {openModal === 'update' ? (
         <UpdateEmployeeModal
           open={true}
           onClose={() => setOpenModal(null)}
           employee={employee}
         />
-      )}
+      ):null}
 
-      {openModal === 'addTeam' && (
+      {openModal === 'addTeam' ? (
         <AddTeamModal
           open={true}
           onClose={() => setOpenModal(null)}
           departmentHead={employee}
         />
-      )}
+      ): null}
 
-      {openModal === 'add' && (
+      {openModal === 'add' ? (
         <AddEmployeeModal
           open={true}
           onClose={() => setOpenModal(null)}
           parentId={employee.id}
           department={employee.department}
         />
-      )}
+      ):null}
 
-      {openModal === 'move' && (
+      {openModal === 'move' ? (
         <MoveEmployeeModal
           open={true}
           onClose={() => setOpenModal(null)}
           employee={employee}
           currentTeamId={employee.teamId || ''}
         />
-      )}
+      ):null}
 
       <ConfirmationModal
         open={confirmOpen}

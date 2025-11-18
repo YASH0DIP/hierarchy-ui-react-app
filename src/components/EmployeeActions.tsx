@@ -1,7 +1,7 @@
 import React from 'react';
 import { Tooltip, IconButton } from '@mui/material';
 import type { Employee } from '../types/Employee';
-import { Trash2Icon, UserPen, UserPlus} from 'lucide-react';
+import { Trash2Icon, UserPen, UserPlus } from 'lucide-react';
 
 interface Props {
   employee: Employee;
@@ -20,21 +20,21 @@ const EmployeeActions: React.FC<Props> = ({
   };
 
   return (
-    <div className="flex gap-2 flex-wrap mt-1" onClick={e => e.stopPropagation()}>
+    <div className="flex gap-2 flex-wrap mt-2" onClick={e => e.stopPropagation()}>
       {employee.position !== 'CEO' && (
         <Tooltip title="Update Employee">
           <span className='rounded-xl border border-blue-600 hover:bg-blue-50'>
-          <IconButton
-            color="primary"
-            size="small"
-            aria-label='Update Employee'
-            onClick={(e) => handleClick(e, 'update')}
-            sx={{
-              paddingX: 1.5
-            }}
-          >
-            <UserPen size={16} />
-          </IconButton>
+            <IconButton
+              color="primary"
+              size="small"
+              aria-label='Update Employee'
+              onClick={(e) => handleClick(e, 'update')}
+              sx={{
+                paddingX: 1.5
+              }}
+            >
+              <UserPen size={16} />
+            </IconButton>
           </span>
         </Tooltip>
       )}
@@ -44,7 +44,7 @@ const EmployeeActions: React.FC<Props> = ({
           <span className='rounded-xl border border-purple-600 hover:bg-purple-50'>
             <IconButton
               sx={{
-                paddingX: 1.5,
+                paddingX: 1.25,
                 fontSize: "10px",
                 fontWeight: "bold"
               }}
@@ -61,6 +61,23 @@ const EmployeeActions: React.FC<Props> = ({
 
       {employee.position === 'Team Member' && (
         <>
+          <Tooltip title={teamSize < 3 ? "Cannot delete: Team requires minimum 2 members" : "Delete Employee"}>
+            <span className={`rounded-xl border ${teamSize < 3 ? "border-gray-300" : "border-red-600"} rounded hover:bg-red-50`}>
+              <IconButton
+                color="error"
+                size="small"
+                aria-label='Delete Employee'
+                disabled={teamSize < 3}
+                sx={{
+                  paddingX: 1.5,
+                }}
+                onClick={(e) => handleClick(e, 'delete')}
+              >
+                <Trash2Icon size={16} />
+              </IconButton>
+            </span>
+          </Tooltip>
+
           <Tooltip title={teamSize < 3 ? "Cannot move: Team requires minimum 2 members" : "Move Employee"}>
             <span className={`rounded-xl border ${teamSize < 3 ? "border-gray-300" : "border-amber-700"} rounded hover:bg-yellow-50`}>
               <IconButton
@@ -79,22 +96,7 @@ const EmployeeActions: React.FC<Props> = ({
               </IconButton>
             </span>
           </Tooltip>
-          <Tooltip title={teamSize < 3 ? "Cannot delete: Team requires minimum 2 members" : "Delete Employee"}>
-            <span className={`rounded-xl border ${teamSize < 3 ? "border-gray-300" : "border-red-600"} rounded hover:bg-red-50`}>
-              <IconButton
-                color="error"
-                size="small"
-                aria-label='Delete Employee'
-                disabled={teamSize < 3}
-                sx={{
-                  paddingX: 1.5,
-                }}
-                onClick={(e) => handleClick(e, 'delete')}
-              >
-                <Trash2Icon size={16}/>
-              </IconButton>
-            </span>
-          </Tooltip>
+
         </>
       )}
 

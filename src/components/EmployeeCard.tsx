@@ -43,11 +43,11 @@ const EmployeeCard: React.FC<Props> = ({ employee, onAction, ArrowIcon }) => {
         >
           {/* LEFT SIDE INFO */}
           <Box display="flex" alignItems="center" gap={1.5}>
-            <div className="text-[#9f6c58] p-1 border-2 border-gray-400 rounded-3xl"><User size={24} color="gray" /></div>
+            <div className="flex flex-col items-center gap-1 justify-around"><div className="text-[#9f6c58] p-1 border-2 border-gray-400 rounded-3xl"><User size={24} color="gray" /></div> </div>
 
             <Box>
               <div className="flex flex-col">
-                <Typography variant="h6" fontWeight="bold" color="text.primary">
+                <Typography variant="h6" fontSize={"1.125rem"} fontWeight="bold" color="text.primary">
                   {employee.name}
                 </Typography>
 
