@@ -19,7 +19,7 @@ const EmployeeNode: React.FC<Props> = ({ employee, isSearchResult = false }) => 
   const { filter, employees, deleteEmployee } = useEmployee();
   const [showChildren, setShowChildren] = useState(false);
   const [openModal, setOpenModal] = useState<'update' | 'move' | 'add' | 'addTeam' | null>(null);
-  const [confirmOpen, setConfirmOpen] = useState(false); // ✅ separate for delete confirmation
+  const [confirmOpen, setConfirmOpen] = useState(false);
 
   const matchesFilter = (emp: Employee) => {
     const search = filter.toLowerCase();

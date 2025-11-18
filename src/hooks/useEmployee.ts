@@ -49,7 +49,7 @@ export const useEmployee = () => {
         );
         return updated;
       });
-      toast.success("Employee Added!");
+      toast.success("Employee Added Successfully!");
     },
     [setEmployees, updateNodeRecursive]
   );
@@ -63,7 +63,7 @@ export const useEmployee = () => {
           (node) => ({ ...node, ...updates })
         )
       );
-      toast.success("Employee Updated!");
+      toast.success("Employee Updated Successfully!");
     },
     [setEmployees, updateNodeRecursive]
   );
@@ -101,7 +101,7 @@ export const useEmployee = () => {
       const removedEmployee = removeFromOldTeam(prev);
       return addToNewTeam(removedEmployee);
     });
-    toast.success("Employee Moved!");
+    toast.success("Employee Moved Successfully!");
   };
 
   const deleteEmployee = useCallback(
@@ -125,7 +125,7 @@ export const useEmployee = () => {
           }
         )
       );
-      toast.success("Employee Deleted!");
+      toast.success("Employee Deleted Successfully!");
     },
     [setEmployees, updateNodeRecursive]
   );
@@ -178,7 +178,7 @@ export const useEmployee = () => {
         return updatedTree;
       });
 
-      toast.success("New Team Created!");
+      toast.success("New Team Created Successfully!");
     },
     [setEmployees, updateNodeRecursive]
   );

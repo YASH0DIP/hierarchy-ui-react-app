@@ -88,11 +88,11 @@ const EmployeeCard: React.FC<Props> = ({ employee, onAction, ArrowIcon }) => {
           </Box>
 
           {/* ACTIONS + COLLAPSE */}
+          {employee.children && employee.children.length > 0 ? (
           <Box display="flex" flexDirection="column" alignItems="end" gap={1}>
-            {employee.children && employee.children.length > 0 && (
               <ArrowIcon style={{ opacity: 0.6, cursor: "pointer" }} />
-            )}
           </Box>
+          ):null}
         </Box>
       </CardContent>
     </Card>
