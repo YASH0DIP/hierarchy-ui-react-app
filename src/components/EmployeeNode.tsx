@@ -120,4 +120,4 @@ const EmployeeNode: React.FC<Props> = ({ employee, isSearchResult = false }) => 
   );
 };
 
-export default EmployeeNode;
+export default React.memo(EmployeeNode);

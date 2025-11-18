@@ -38,4 +38,4 @@ const ConfirmationModal: React.FC<ConfirmationModalProps> = ({ open, onClose, on
   );
 };
 
-export default ConfirmationModal;
+export default React.memo(ConfirmationModal);

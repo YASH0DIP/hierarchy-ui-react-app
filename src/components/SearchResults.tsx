@@ -51,4 +51,4 @@ const SearchResults: React.FC = () => {
   );
 };
 
-export default SearchResults;
+export default React.memo(SearchResults);

@@ -183,4 +183,4 @@ const AddTeamModal: React.FC<Props> = ({ open, onClose, departmentHead }) => {
     );
 };
 
-export default AddTeamModal;
+export default React.memo(AddTeamModal);

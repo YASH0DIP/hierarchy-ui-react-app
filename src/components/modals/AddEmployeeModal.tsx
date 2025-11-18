@@ -95,4 +95,4 @@ const AddEmployeeModal: React.FC<Props> = ({ open, onClose, parentId, department
   );
 };
 
-export default AddEmployeeModal;
+export default React.memo(AddEmployeeModal);

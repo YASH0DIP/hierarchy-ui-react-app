@@ -99,4 +99,4 @@ const EmployeeCard: React.FC<Props> = ({ employee, onAction, ArrowIcon }) => {
   );
 };
 
-export default EmployeeCard;
+export default React.memo(EmployeeCard);

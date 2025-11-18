@@ -83,4 +83,4 @@ const MoveEmployeeModal: React.FC<Props> = ({ open, onClose, employee, currentTe
   );
 };
 
-export default MoveEmployeeModal;
+export default React.memo(MoveEmployeeModal);
